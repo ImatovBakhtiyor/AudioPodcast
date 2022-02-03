@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "330193872264",
+    "firebase_url": "https://audio-podcast-bac7a-default-rtdb.firebaseio.com",
+    "project_id": "audio-podcast-bac7a",
+    "storage_bucket": "audio-podcast-bac7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330193872264:android:1a68a41de96e4ec4e2863d",
+        "android_client_info": {
+          "package_name": "com.example.audiopodcast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330193872264-ous8ej2h7qpd3vermv6p70uqumf57v6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZdbnCKznpWpbSPArYMhdIx32k2repCtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330193872264-ous8ej2h7qpd3vermv6p70uqumf57v6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

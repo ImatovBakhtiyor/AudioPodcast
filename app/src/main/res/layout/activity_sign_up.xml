@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="127dp">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="14.4dp"
+            android:layout_marginTop="14.4dp"
+            android:layout_marginRight="33.6dp"
+            android:layout_marginBottom="33.6dp"
+            android:src="@drawable/ic_circle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="79.2dp"
+            android:layout_marginTop="79.2dp"
+            android:layout_marginRight="16.8dp"
+            android:layout_marginBottom="16.8dp"
+            android:src="@drawable/ic_dot" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="449dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginRight="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginRight="110dp"
+            android:gravity="top"
+            android:paddingLeft="8dp"
+            android:text="@string/register"
+            android:textColor="#2E2E5D"
+            android:textSize="50px"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/input_login_page"
+            android:hint="Email"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="109dp"
+            android:background="@drawable/input_login_page"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="178dp"
+            android:background="@drawable/input_login_page"
+            android:hint="Date of Birth"
+            android:inputType="date"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+        <TextView
+            android:id="@+id/register_text"
+            android:clickable="true"
+            android:layout_width="295dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="255dp"
+            android:text="@string/register_text"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="321dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="321dp"
+            android:background="@drawable/btn_design"
+            android:text="Register" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="321dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="390dp"
+            android:textColor="#4838D1"
+            android:background="@drawable/btn_cancel_design"
+            android:text="Cancel" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

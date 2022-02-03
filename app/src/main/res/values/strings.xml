@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AudioPodcast</string>
+    <string name="version_1_0">version 1.0</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet la maryame dor sut colondeum</string>
+    <string name="title_two">Title two</string>
+    <string name="title_three">Title three</string>
+    <string name="lets_get_started">lets Get Started</string>
+    <string name="title_one">Title one</string>
+    <string name="login_to_your_account">Login to Your Account</string>
+    <string name="register">Register</string>
+    <string name="register_text">By signing up, you agree to our <a href="https://www.google.com">Term</a>, <a href="https://learntodroid.com">Data Policy </a> and  <a href="https://learntodroid.com">Cookies Policy</a>.</string>
+    <string name="confirm_send">Enter the confirmation code we sent to</string>
+    <string name="confirmation_code">Confirmation code</string>
+    <string name="receive">Dont receive the code? <a href="https://learntodroid.com">Resend </a></string>
+    <string name="submit">Submit</string>
+    <string name="by_personal">By personalize your account, we can help you to find what you like.</string>
+    <string name="find_what_y">Find what you are looking for</string>
+    <string name="please_fill">Please fill email or phone number and we\'ll send you a link to get back into your account.</string>
+    <string name="sent_email">We sent an email to</string>
+    <string name="choose_min">Choose <b>min. 3 topic</b>  you like, we will give you more often that relate to it.</string>
+    <string name="you_are_ready_to_go">You are ready to go!</string>
+</resources>

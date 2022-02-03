@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Personalization">
+
+    <View
+        android:id="@+id/ellipse_16_"
+        android:layout_width="wrap_content"
+        android:layout_height="177dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="166dp"
+        android:layout_marginBottom="553dp"
+        android:background="@drawable/ic_ellipse16" />
+
+    <View
+        android:id="@+id/ellipse_17"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="312dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="501dp"
+        android:background="@drawable/ic_ellipse17" />
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="204dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:text="Personalize Suggestion"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="287dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/choose_min"
+            android:textSize="40px" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="@drawable/input_login_page"
+            android:hint="Search Categories"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="311dp"
+        android:layout_below="@id/top"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="false"
+            android:id="@+id/categoriesChipGroup">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/art_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:checkable="true"
+                android:text="Art"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/bussiness_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Bussiness"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/biography_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Biography"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/comedy_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Comedy"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/culture_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Culture"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/edycation_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Edycation"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/news_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="News"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/philosophy_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Philosophy"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/psychology_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Psychology"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/technology_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Technology"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/travel_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Travel"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <LinearLayout
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="295dp"
+                android:layout_height="56dp"
+                android:background="@drawable/btn_design"
+                android:text="@string/submit" />
+
+            <Button
+                android:id="@+id/skipBtn"
+                android:layout_width="295dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_cancel_design"
+                android:text="Skip"
+                android:textColor="#4838D1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
