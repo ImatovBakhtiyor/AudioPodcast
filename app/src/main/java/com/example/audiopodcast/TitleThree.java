@@ -13,7 +13,6 @@ public class TitleThree extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_three);
-        getSupportActionBar().hide();
         btn = findViewById(R.id.start);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

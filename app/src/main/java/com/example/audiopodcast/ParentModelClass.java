@@ -6,8 +6,20 @@ public class ParentModelClass {
     String title;
     List<ChildModelClass> childModelClassList;
 
-    public ParentModelClass(String title) {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<ChildModelClass> getChildModelClassList() {
+        return childModelClassList;
+    }
+
+    public void setChildModelClassList(List<ChildModelClass> childModelClassList) {
+        this.childModelClassList = childModelClassList;
     }
 
     public ParentModelClass(String title, List<ChildModelClass> childModelClassList) {

@@ -14,7 +14,6 @@ public class TitleTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_two);
-        getSupportActionBar().hide();
         btn = findViewById(R.id.next2);
         skip = findViewById(R.id.skip);
         View.OnClickListener onClickListener = new View.OnClickListener() {

@@ -61,6 +61,7 @@
             android:paddingBottom="16dp" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:layout_marginTop="109dp"

@@ -55,16 +55,21 @@
             android:layout_height="53dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/input_login_page"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="5dp"
             android:hint="Email"
             android:paddingLeft="24dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:layout_marginTop="109dp"
             android:background="@drawable/input_login_page"
+            android:drawableLeft="@drawable/ic_pass"
+            android:drawablePadding="5dp"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="24dp"

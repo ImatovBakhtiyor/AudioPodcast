@@ -41,6 +41,7 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
+
         return parentModelClassList.size();
     }
 

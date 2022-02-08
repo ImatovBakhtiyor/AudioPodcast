@@ -1,13 +1,19 @@
 package com.example.audiopodcast;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -18,13 +24,61 @@ ArrayList<ChildModelClass> childModelClassArrayList;
 ArrayList<ChildModelClass>  recomendedForYouList;
 ArrayList<ChildModelClass>  bestSellerList;
 ArrayList<ChildModelClass>  newReleasesList;
-    ArrayList<ChildModelClass>  trendingNovList;
+ArrayList<ChildModelClass>  trendingNovList;
+private  FirebaseAuth mAuth;
+Intent intent;
+Toolbar toolbarM;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        getSupportActionBar().hide();
+        ParentAdapter parentAdapter;
+        init();
+        setSupportActionBar(toolbarM);
+        fillArrays();
+
+
+        parentModelClassArrayList.add(new ParentModelClass("Recommended for you",recomendedForYouList));
+        parentModelClassArrayList.add(new ParentModelClass("Best Seller",bestSellerList));
+        parentModelClassArrayList.add(new ParentModelClass("New Releases",newReleasesList));
+        parentModelClassArrayList.add(new ParentModelClass("Trending Now",trendingNovList));
+
+
+        parentAdapter = new ParentAdapter(parentModelClassArrayList,HomePage.this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(parentAdapter);
+        parentAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+                intent = new Intent(HomePage.this,Login.class);
+                startActivity(intent);
+                return true;
+            case R.id.deactivate:
+                mAuth.signOut();
+                Toast.makeText(this,  item.getItemId(), Toast.LENGTH_SHORT).show();
+                intent = new Intent(HomePage.this,MainActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void init(){
+        toolbarM = findViewById(R.id.toolbar);
         recyclerView = findViewById(R.id.rv_parent);
         childModelClassArrayList = new ArrayList<>();
         recomendedForYouList =  new ArrayList<>();
@@ -32,8 +86,10 @@ ArrayList<ChildModelClass>  newReleasesList;
         newReleasesList = new ArrayList<>();
         trendingNovList = new ArrayList<>();
         parentModelClassArrayList = new ArrayList<>();
-        ParentAdapter parentAdapter;
+        mAuth=FirebaseAuth.getInstance();
 
+    }
+    private void fillArrays(){
         bestSellerList.add(new ChildModelClass(R.drawable.instantbook));
         bestSellerList.add(new ChildModelClass(R.drawable.koreanbook));
         bestSellerList.add(new ChildModelClass(R.drawable.lovecontentbook));
@@ -53,17 +109,5 @@ ArrayList<ChildModelClass>  newReleasesList;
         trendingNovList.add(new ChildModelClass(R.drawable.instantbook));
         trendingNovList.add(new ChildModelClass(R.drawable.koreanbook));
         trendingNovList.add(new ChildModelClass(R.drawable.five));
-
-
-        parentModelClassArrayList.add(new ParentModelClass("Recommended for you",recomendedForYouList));
-        parentModelClassArrayList.add(new ParentModelClass("Best Seller",bestSellerList));
-        parentModelClassArrayList.add(new ParentModelClass("New Releases",newReleasesList));
-        parentModelClassArrayList.add(new ParentModelClass("Trending Now",trendingNovList));
-
-
-        parentAdapter = new ParentAdapter(parentModelClassArrayList,HomePage.this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(parentAdapter);
-        parentAdapter.notifyDataSetChanged();
     }
 };
