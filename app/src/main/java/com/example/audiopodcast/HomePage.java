@@ -64,14 +64,12 @@ Toolbar toolbarM;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.logout:
+                mAuth.signOut();
                 intent = new Intent(HomePage.this,Login.class);
                 startActivity(intent);
                 return true;
             case R.id.deactivate:
-                mAuth.signOut();
                 Toast.makeText(this,  item.getItemId(), Toast.LENGTH_SHORT).show();
-                intent = new Intent(HomePage.this,MainActivity.class);
-                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

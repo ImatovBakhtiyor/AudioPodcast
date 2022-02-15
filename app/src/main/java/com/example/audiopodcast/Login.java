@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,14 +21,14 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
        TextView register,forgetPass,login;
        EditText Edtemail,Edtpassword;
-       String email,password;
        Intent intent;
-       int signIn=0;
        private FirebaseAuth mAuth;
+    private static final String TAG = "MUSAVVIR";
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
+
             init();
 
             View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -43,20 +45,12 @@ public class Login extends AppCompatActivity {
                             break;
                         case R.id.login:
                             if(checkCredential()){
-                                if(signInMethod()>0){
-                                    Toast.makeText(Login.this, "User sign in successful", Toast.LENGTH_SHORT).show();
-                                    intent = new Intent(Login.this, Welcome.class);
-                                    startActivity(intent);
-                                    break;
-                                }
-                                else{
-                                    Toast.makeText(Login.this, "Incorrect login or password", Toast.LENGTH_SHORT).show();
-                                }
-
+                                signInMethod();
                             }
+                            break;
 
                     }
-                }
+                 }
             };
             register.setOnClickListener(onClickListener);
             forgetPass.setOnClickListener(onClickListener);
@@ -71,37 +65,44 @@ public class Login extends AppCompatActivity {
             Edtemail = findViewById(R.id.email);
             Edtpassword = findViewById(R.id.password);
             mAuth = FirebaseAuth.getInstance();
+        Log.d(TAG,"Init Login" + ' '+mAuth.getUid());
         }
 
-    private int signInMethod(){
-
-                mAuth.signInWithEmailAndPassword(Edtemail.getText().toString(),Edtpassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void signInMethod(){
+        String password=Edtpassword.getText().toString().trim();
+       String email =Edtemail.getText().toString().trim();
+                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(Login.this, task.getResult().toString(), Toast.LENGTH_SHORT).show();
-                        if (task.isSuccessful()){
 
-                            signIn = 1;
+                        if (task.isSuccessful()){
+                            Toast.makeText(Login.this, "User sign in successfuly", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,"User sign in successfuly" + ' '+mAuth.getUid());
+                            intent = new Intent(Login.this, Welcome.class);
+                            startActivity(intent);
                         }
                         else{
-                            signIn = 0;
+
+                            Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,task.getException().getMessage() + "User sign in failed" + ' '+mAuth.getUid() + email +' '+password);
+
                         }
                     }
                 });
-
-            return signIn;
     };
 
     private boolean checkCredential(){
-                email = Edtemail.getText().toString();
-                password = Edtpassword.getText().toString();
 
-                if(email.isEmpty()){
+                if(Edtemail.getText().toString().isEmpty()){
                     Toast.makeText(this, "Email field is empty ", Toast.LENGTH_SHORT).show();
+                    Edtemail.setError("Email field is empty ");
+                    Edtemail.requestFocus();
                     return false;
                 }
-                else if (password.isEmpty()){
+                else if (Edtpassword.getText().toString().isEmpty()){
                     Toast.makeText(this, "Password field is empty ", Toast.LENGTH_SHORT).show();
+                    Edtpassword.setError("Password field is empty ");
+                    Edtpassword.requestFocus();
                     return false;
                 }
                 else
